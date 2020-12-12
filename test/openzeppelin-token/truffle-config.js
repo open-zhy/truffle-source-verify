@@ -35,6 +35,14 @@ module.exports = {
       gas: 0x7a1200,
       network_id: 5,
       skipDryRun: true
-    }
+    },
+    sokol: {
+      provider: () => {
+        return new HDWalletProvider(process.env.MNEMONIC, `https://sokol.poa.network`)
+      },
+      gas: 0x7a1200,
+      network_id: 77,
+      skipDryRun: true,
+    },
   }
 }
