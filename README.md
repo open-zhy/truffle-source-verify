@@ -43,7 +43,7 @@ To verify your contracts on Etherscan, run:
 truffle run etherscan SomeContractName AnotherContractName --network networkName [--debug]
 ```
 
-Supported networks: mainnet, kovan, rinkeby, ropsten, goerli.
+Supported networks: `mainnet`, `kovan`, `rinkeby`, `ropsten`, `goerli`.
 
 To verify your contracts on Blockscout, run:
 
@@ -51,6 +51,6 @@ To verify your contracts on Blockscout, run:
 truffle run blockscout SomeContractName AnotherContractName --network networkName --license UNLICENSED [--debug]
 ```
 
-Supported networks: mainnet, xdai, sokol.
+Supported networks: `mainnet`, `xdai`, `sokol`.
 
 See [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify) for more information.

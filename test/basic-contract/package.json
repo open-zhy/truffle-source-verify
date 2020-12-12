@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "deploy": "npx truffle migrate  --f 2 --to 2 --network sokol",
+    "test": "npx truffle run blockscout BasicContract --network sokol --license UNLICENSED"
+  },
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.1.0",
     "dotenv": "^8.2.0",

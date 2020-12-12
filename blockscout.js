@@ -232,6 +232,12 @@ const fetchMergedSource = async (artifact, options) => {
   return mergedSource;
 };
 
+const extractCompilerVersion = (artifact) => {
+  const metadata = JSON.parse(artifact.metadata);
+  const compilerVersion = `v${metadata.compiler.version}`;
+  return compilerVersion;
+};
+
 const hasSourceCode = (verificationResult) =>
   verificationResult.data &&
   verificationResult.data.result &&
