@@ -2,7 +2,7 @@
 
 This truffle plugin allows you to automatically verify your smart contracts' source code on Etherscan/Blockscout, straight from the Truffle CLI.
 
-It extends [truffle-plugin-verify]((https://github.com/rkalis/truffle-plugin-verify) to also support Blockscout.
+It extends [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify) to also support Blockscout.
 
 ## Installation
 
@@ -53,4 +53,4 @@ truffle run blockscout SomeContractName AnotherContractName --network networkNam
 
 Supported networks: mainnet, xdai, sokol.
 
-See [truffle-plugin-verify]((https://github.com/rkalis/truffle-plugin-verify) for more information.
+See [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify) for more information.
