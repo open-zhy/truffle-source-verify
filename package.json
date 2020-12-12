@@ -1,6 +1,6 @@
 {
   "name": "truffle-source-verify",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Verify your deployed smart contracts on Etherscan/Blockscout from the Truffle CLI",
   "repository": "https://github.com/olivdb/truffle-source-verify",
   "scripts": {
