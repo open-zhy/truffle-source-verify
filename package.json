@@ -1,15 +1,8 @@
 {
-  "name": "truffle-plugin-verify",
-  "version": "0.5.4",
-  "description": "Verify your deployed smart contracts on Etherscan from the Truffle CLI",
-  "repository": "https://github.com/rkalis/truffle-plugin-verify",
-  "main": "verify.js",
-  "files": [
-    "constants.js",
-    "util.js",
-    "verify.js",
-    "truffle-plugin.json"
-  ],
+  "name": "truffle-source-verify",
+  "version": "0.1.0",
+  "description": "Verify your deployed smart contracts on Etherscan/Blockscout from the Truffle CLI",
+  "repository": "https://github.com/olivdb/truffle-source-verify",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
@@ -19,9 +12,10 @@
     "plugin",
     "ethereum",
     "etherscan",
+    "blockscout",
     "verify"
   ],
-  "author": "Rosco Kalis <roscokalis@gmail.com>",
+  "author": "@olivdb, @rkalis",
   "license": "MIT",
   "dependencies": {
     "axios": "0.19.2",

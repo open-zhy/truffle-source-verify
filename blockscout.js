@@ -36,7 +36,7 @@ module.exports = async (config) => {
   // Set debug logging
   if (config.debug) logger.level("debug");
   logger.debug("DEBUG logging is turned ON");
-  logger.debug(`Running truffle-plugin-verify v${version}`);
+  logger.debug(`Running truffle-source-verify v${version}`);
 
   // Verify each contract
   const contractNameAddressPairs = config._.slice(1);
@@ -164,6 +164,7 @@ const verifyContract = async (artifact, options) => {
 };
 
 const sendVerifyRequest = async (artifact, options) => {
+  const compilerVersion = extractCompilerVersion(artifact);
   const mergedSource = await fetchMergedSource(artifact, options);
 
   const postQueries = {
@@ -172,10 +173,7 @@ const sendVerifyRequest = async (artifact, options) => {
     addressHash: artifact.networks[`${options.networkId}`].address,
     contractSourceCode: mergedSource,
     name: artifact.contractName,
-    compilerVersion: `v${artifact.compiler.version.replace(
-      ".Emscripten.clang",
-      ""
-    )}`,
+    compilerVersion,
     optimization: options.optimizationUsed,
     optimizationRuns: options.runs,
     autodetectConstructorArguments: true,
