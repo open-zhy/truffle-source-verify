@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "deploy": "npx truffle migrate  --f 2 --to 2 --network sokol",
-    "test": "npx truffle run blockscout BasicContract --network sokol --license UNLICENSED"
+    "deploy:sokol": "npx truffle migrate  --f 2 --to 2 --network sokol",
+    "deploy:rinkeby": "npx truffle migrate  --f 2 --to 2 --network rinkeby",
+    "verify:sokol": "npx truffle run blockscout BasicContract --network sokol --license UNLICENSED",
+    "verify:rinkeby": "npx truffle run etherscan BasicContract --network rinkeby"
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.1.0",
