@@ -35,12 +35,14 @@ It extends [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-veri
 
 ## Usage
 
+### On the command-line
+
 Before running verification, make sure that you have actually deployed your contracts to a public network with Truffle.
 
 To verify your contracts on Etherscan, run:
 
 ```
-truffle run etherscan SomeContractName AnotherContractName --network networkName [--debug]
+npx truffle run etherscan SomeContractName AnotherContractName --network networkName [--debug]
 ```
 
 Supported networks: `mainnet`, `kovan`, `rinkeby`, `ropsten`, `goerli`.
@@ -48,9 +50,26 @@ Supported networks: `mainnet`, `kovan`, `rinkeby`, `ropsten`, `goerli`.
 To verify your contracts on Blockscout, run:
 
 ```
-truffle run blockscout SomeContractName AnotherContractName --network networkName --license UNLICENSED [--debug]
+npx truffle run blockscout SomeContractName AnotherContractName --network networkName --license UNLICENSED [--debug]
 ```
 
 Supported networks: `mainnet`, `xdai`, `sokol`.
 
 See [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify) for more information.
+
+### In Javascript
+
+```
+// file: ./scripts/test_verify.js
+// Usage: npx truffle exec ./scripts/test_verify.js --network rinkeby
+
+const { verify } = require("truffle-source-verify/lib");
+
+async function main() {
+  const idx = process.argv.indexOf("--network");
+  const network = process.argv[idx + 1];
+  await verify(["BasicContract"], network, "UNLICENSED");
+}
+
+module.exports = (cb) => main().then(cb).catch(cb);
+```
