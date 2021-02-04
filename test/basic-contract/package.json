@@ -7,7 +7,8 @@
     "deploy:sokol": "npx truffle migrate  --f 2 --to 2 --network sokol",
     "deploy:rinkeby": "npx truffle migrate  --f 2 --to 2 --network rinkeby",
     "verify:sokol": "npx truffle run blockscout BasicContract --network sokol --license UNLICENSED",
-    "verify:rinkeby": "npx truffle run etherscan BasicContract --network rinkeby"
+    "verify:rinkeby": "npx truffle run etherscan BasicContract --network rinkeby",
+    "test:script": "npx truffle exec ./scripts/test_verify.js --network rinkeby"
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.1.0",
