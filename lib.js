@@ -34,7 +34,7 @@ async function verify(contractNames, network, options = {}) {
     );
     const cmd = `truffle run ${explorer} ${contractNames.join(
       " "
-    )} --network ${network} --license ${license}`;
+    )} ${commandOptions.join(" ")}`;
     const p = spawn("npx", cmd.split(" "), {
       stdio: "inherit",
     });
