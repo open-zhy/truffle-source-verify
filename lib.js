@@ -1,6 +1,22 @@
 const { spawn } = require("child_process");
 
-async function verify(contractNames, network, license = "UNLICENSED") {
+async function verify(contractNames, network, options = {}) {
+  const commandOptions = [
+    '--network', network,
+  ];
+
+  if (options.license) {
+    commandOptions.push('--license', options.license)
+  }
+
+  if (options.debug) {
+    commandOptions.push('--debug')
+  }
+
+  if (options.forceConstructorArgs) {
+    commandOptions.push('--forceConstructorArgs', options.forceConstructorArgs)
+  }
+
   let explorer;
   if (["mainnet", "rinkeby", "kovan", "ropsten", "goerli"].includes(network)) {
     explorer = "etherscan";
