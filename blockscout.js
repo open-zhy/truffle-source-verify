@@ -9,12 +9,14 @@ const { plugins } = require("sol-merger/dist/lib/plugins");
 
 const API_URLS = {
   1: "https://blockscout.com/eth/mainnet/api",
+  20: "https://esc.elastos.io/api",
   77: "https://blockscout.com/poa/sokol/api",
   100: "https://blockscout.com/poa/xdai/api",
 };
 
 const EXPLORER_URLS = {
   1: "https://blockscout.com/poa/sokol/address",
+  20: 'https://eth.elastos.io/address',
   77: "https://blockscout.com/poa/sokol/address",
   100: "https://blockscout.com/poa/xdai/address",
 };
@@ -66,9 +68,8 @@ module.exports = async (config) => {
         failedContracts.push(`${contractNameAddressPair}`);
       } else {
         // Add link to verified contract on Blockscout
-        const explorerUrl = `${EXPLORER_URLS[options.networkId]}/${
-          artifact.networks[`${options.networkId}`].address
-        }/contracts`;
+        const explorerUrl = `${EXPLORER_URLS[options.networkId]}/${artifact.networks[`${options.networkId}`].address
+          }/contracts`;
         status += `: ${explorerUrl}`;
       }
       logger.info(status);
@@ -81,8 +82,7 @@ module.exports = async (config) => {
 
   enforce(
     failedContracts.length === 0,
-    `Failed to verify ${
-      failedContracts.length
+    `Failed to verify ${failedContracts.length
     } contract(s): ${failedContracts.join(", ")}`,
     logger
   );
