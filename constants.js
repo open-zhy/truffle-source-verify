@@ -4,6 +4,7 @@ const API_URLS = {
   4: 'https://api-rinkeby.etherscan.io/api',
   5: 'https://api-goerli.etherscan.io/api',
   20: 'https://esc.elastos.io/api',
+  21: 'https://esc-testnet.elastos.io/api',
   42: 'https://api-kovan.etherscan.io/api',
   56: 'https://api.bscscan.com/api',
   97: 'https://api-testnet.bscscan.com/api'
@@ -15,6 +16,7 @@ const EXPLORER_URLS = {
   4: 'https://rinkeby.etherscan.io/address',
   5: 'https://goerli.etherscan.io/address',
   20: 'https://eth.elastos.io/address',
+  21: 'https://esc-testnet.elastos.io/address',
   42: 'https://kovan.etherscan.io/address',
   56: 'https://bscscan.com/address',
   97: 'https://testnet.bscscan.com/address'

@@ -10,6 +10,7 @@ const { plugins } = require("sol-merger/dist/lib/plugins");
 const API_URLS = {
   1: "https://blockscout.com/eth/mainnet/api",
   20: "https://esc.elastos.io/api",
+  21: "https://esc-testnet.elastos.io/api",
   77: "https://blockscout.com/poa/sokol/api",
   100: "https://blockscout.com/poa/xdai/api",
 };
@@ -17,6 +18,7 @@ const API_URLS = {
 const EXPLORER_URLS = {
   1: "https://blockscout.com/poa/sokol/address",
   20: 'https://eth.elastos.io/address',
+  21: 'https://esc-testnet.elastos.io/address',
   77: "https://blockscout.com/poa/sokol/address",
   100: "https://blockscout.com/poa/xdai/address",
 };

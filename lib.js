@@ -20,7 +20,7 @@ async function verify(contractNames, network, options = {}) {
   let explorer;
   if (["mainnet", "rinkeby", "kovan", "ropsten", "goerli"].includes(network)) {
     explorer = "etherscan";
-  } else if (["xdai", "sokol", "elastos"].includes(network)) {
+  } else if (["xdai", "sokol", "elastos", "esc-testnet", "elatest"].includes(network)) {
     explorer = "blockscout";
   } else {
     console.error(
